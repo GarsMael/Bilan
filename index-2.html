@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bilan : le bilan mensuel de vos clients, envoyé sans y penser</title>
+<meta name="description" content="Saisissez vos chiffres du mois en une minute. Bilan met le rapport en page à vos couleurs et l’envoie à votre client le 1er du mois.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Bilan : le bilan mensuel de vos clients, envoyé sans y penser">
+<meta property="og:description" content="Vos chiffres du mois en une minute. Le rapport part tout seul le 1er, à vos couleurs.">
+<meta name="theme-color" content="#1f4d3a">
+<style>
+:root{--encre:#14231b;--vert:#1f4d3a;--moutarde:#f0b429;--fond:#fafaf7;--trait:#d9ddd5;--gris:#4d5a52}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--fond);color:var(--encre);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-bottom:84px}
+h1,h2{font-weight:800;letter-spacing:-.03em;line-height:1.08;margin:0}
+h1{font-size:clamp(2.1rem,8.5vw,3.6rem)}
+h2{font-size:clamp(1.6rem,6vw,2.3rem);margin-bottom:.6em}
+p{margin:0 0 1em}
+.w{max-width:680px;margin:0 auto;padding:0 20px}
+.hero{background:var(--vert);color:#fff;padding:36px 0 44px}
+.hero p.lead{font-size:1.15rem;color:#dfe9e2;margin:18px 0 26px}
+.btn{display:block;text-align:center;background:var(--moutarde);color:var(--encre);font-weight:800;font-size:1.1rem;text-decoration:none;padding:17px 22px;border-radius:6px;min-height:56px}
+.btn:focus-visible,summary:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.btn:active{transform:translateY(1px)}
+.note{font-size:.95rem;margin:10px 0 0;color:#dfe9e2;text-align:center}
+.ticket{background:#fff;color:var(--encre);margin-top:34px;padding:22px 20px;border-radius:2px;font-size:.98rem;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+.ticket b.t{display:block;font-size:1.05rem}
+.ticket .ex{color:var(--gris);font-size:.85rem}
+.ticket dl{margin:14px 0;border-top:2px dashed var(--trait);border-bottom:2px dashed var(--trait);padding:10px 0}
+.ticket dl div{display:flex;justify-content:space-between;gap:12px;padding:5px 0}
+.ticket dt{color:var(--gris)}
+.ticket dd{margin:0;font-weight:700;text-align:right}
+.ticket .pied{font-size:.85rem;color:var(--gris);margin:0}
+section{padding:44px 0;border-bottom:1px solid var(--trait)}
+.chiffre{font-size:clamp(3.4rem,16vw,5.5rem);font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--vert);margin:0 0 6px}
+.benef{list-style:none;margin:0;padding:0}
+.benef li{padding:16px 0;border-top:1px solid var(--trait)}
+.benef li:first-child{border-top:0;padding-top:0}
+.benef strong{display:block;font-size:1.12rem}
+.offre{background:#fff;border:2px solid var(--vert);border-radius:6px;padding:24px 20px}
+.prix{font-size:3rem;font-weight:800;letter-spacing:-.04em;line-height:1}
+.prix small{font-size:1.05rem;font-weight:600;letter-spacing:0;color:var(--gris)}
+.jour{color:var(--gris);margin:4px 0 18px}
+.garantie{border-left:5px solid var(--moutarde);background:#fdf6e3;padding:14px 16px;margin:18px 0;font-size:.98rem}
+.garantie strong{display:block}
+.offre .btn{background:var(--vert);color:#fff}
+.offre .note{color:var(--gris)}
+details{border-top:1px solid var(--trait);padding:14px 0}
+details:last-of-type{border-bottom:1px solid var(--trait)}
+summary{font-weight:700;cursor:pointer;min-height:44px;display:flex;align-items:center}
+details p{margin:8px 0 0;color:var(--gris)}
+footer{padding:28px 0;font-size:.9rem;color:var(--gris)}
+.barre{position:fixed;left:0;right:0;bottom:0;background:var(--fond);border-top:1px solid var(--trait);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));z-index:5}
+.barre .btn{max-width:648px;margin:0 auto;padding:14px 18px;min-height:52px}
+@media(min-width:760px){.hero{padding:64px 0}.barre{display:none}body{padding-bottom:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<!-- NE PAS PARTAGER CE SITE PUBLIQUEMENT avant d’avoir ajouté mentions légales, CGV et politique de confidentialité (étape suivante). -->
+
+<header class="hero">
+  <div class="w">
+    <h1>Votre bilan mensuel part tout seul, le 1<sup>er</sup> de chaque mois.</h1>
+    <p class="lead">Vous saisissez vos chiffres en une minute. Bilan met le rapport en page à vos couleurs et l’envoie à votre client. Vous voyez quand il l’a lu.</p>
+    <a class="btn" href="#offre" data-pay>Commencer</a>
+    <p class="note">39 €/mois · sans engagement</p>
+
+    <div class="ticket" role="img" aria-label="Exemple de bilan mensuel envoyé à un client">
+      <b class="t">Bilan d’octobre</b>
+      <span class="ex">Exemple de rapport reçu par votre client</span>
+      <dl>
+        <div><dt>Repas servis</dt><dd>412 sur 400 prévus</dd></div>
+        <div><dt>Livraisons à l’heure</dt><dd>38 sur 40</dd></div>
+        <div><dt>Réclamations</dt><dd>1, réglée en 1 jour</dd></div>
+      </dl>
+      <p class="pied">Envoyé le 1<sup>er</sup> novembre à 8 h 00. Lu à 9 h 12.</p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="w">
+    <p class="chiffre">5 h</p>
+    <h2>par mois, c’est ce que prennent dix bilans faits à la main.</h2>
+    <p>Comptez 30 minutes par client : relever les chiffres, les mettre en forme, écrire le mail. C’est une estimation, la vôtre sera peut-être plus basse ou plus haute.</p>
+    <p>Quand le bilan arrive en retard ou n’arrive pas, votre client ne voit plus ce qu’il a eu pour son argent. C’est à ce moment-là que le contrat se discute.</p>
+  </div>
+</section>
+
+<section>
+  <div class="w">
+    <h2>Ce que Bilan change</h2>
+    <ul class="benef">
+      <li><strong>Une minute de saisie</strong>Vous entrez les chiffres du mois pour chaque client. Le reste est fait.</li>
+      <li><strong>Un rapport à vos couleurs</strong>Mis en page automatiquement, avec votre nom et votre identité. Votre client voit un document soigné, signé de vous.</li>
+      <li><strong>Un envoi sans y penser, et une preuve de lecture</strong>Le rapport part le 1<sup>er</sup> du mois. Vous savez quand votre client l’a ouvert.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="offre">
+  <div class="w">
+    <h2>Accès anticipé</h2>
+    <p>Bilan ouvre aux premiers prestataires de restauration. Vous êtes accompagné pour la prise en main, et votre retour sert à finir le produit.</p>
+    <div class="offre">
+      <div class="prix">39 € <small>par mois</small></div>
+      <p class="jour">Soit environ 1,30 € par jour, pour jusqu’à 10 clients suivis.</p>
+      <div class="garantie">
+        <strong>Satisfait ou remboursé pendant 30 jours</strong>
+        Écrivez-nous à [VOTRE EMAIL] pendant les 30 jours qui suivent votre paiement. Le remboursement est fait sous 5 jours ouvrés, sans justificatif.
+      </div>
+      <a class="btn" href="#offre" data-pay>Rejoindre l’accès anticipé</a>
+      <p class="note">Sans engagement, résiliable à tout moment.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="w">
+    <h2>Questions fréquentes</h2>
+    <details><summary>Est-ce que ça marche pour mon activité ?</summary><p>Si vous facturez vos clients au mois et que vous pouvez résumer le mois en quelques chiffres (repas servis, livraisons, réclamations…), oui. Écrivez-nous votre cas avant de payer, on vous répond franchement.</p></details>
+    <details><summary>Combien de temps ça me prend ?</summary><p>Environ une minute par client et par mois pour saisir les chiffres. Le rapport et l’envoi sont automatiques.</p></details>
+    <details><summary>Et si je veux arrêter ?</summary><p>Vous résiliez quand vous voulez, sans justificatif. Dans les 30 premiers jours, vous êtes en plus remboursé.</p></details>
+    <details><summary>À quoi sert exactement ce que je paie ?</summary><p>À l’accès à Bilan : la saisie, la mise en page à vos couleurs, l’envoi programmé le 1<sup>er</sup> du mois et l’accusé de lecture, pour jusqu’à 10 clients suivis.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="w">Bilan · [RAISON SOCIALE] · [SIRET] · [VOTRE EMAIL]</div>
+</footer>
+
+<div class="barre"><a class="btn" href="#offre" data-pay>Commencer</a></div>
+
+<script>
+// Remplacez cette adresse par votre lien de paiement Stripe quand il sera créé.
+var LIEN_PAIEMENT="https://buy.stripe.com/test_8x228s9MLc5m7BtfTb7bW00";
+document.querySelectorAll("[data-pay]").forEach(function(a){a.href=LIEN_PAIEMENT});
+</script>
+</body>
+</html>
